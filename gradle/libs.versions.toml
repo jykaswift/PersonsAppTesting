@@ -1,0 +1,58 @@
+[versions]
+coreKtx = "1.10.1"
+appcompat = "1.6.1"
+material = "1.9.0"
+constraintlayout = "2.1.4"
+retrofit = "2.9.0"
+okhttp = "4.10.0"
+retrofit-converter-gson = "2.9.0"
+kotlinx-coroutines-android = "1.6.4"
+kotlinx-coroutines-core = "1.5.0"
+gson = "2.9.1"
+rxjava = "2.2.21"
+lifecycle-extensions = "1.1.1"
+lifecycle-livedata-ktx = "2.6.1"
+lifecycle-viewmodel-ktx = "2.6.1"
+glide = "4.15.1"
+room-runtime = "2.5.1"
+room-ktx = "2.5.1"
+glide-compiler = "4.12.0"
+databinding = "3.2.0-alpha11"
+room-compiler = "2.5.1"
+
+junit = "4.13.2"
+junitExt = "1.1.5"
+kaspresso = "1.5.3"
+wiremock = "2.27.2"
+
+[libraries]
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
+logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
+retrofit-converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit-converter-gson" }
+kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinx-coroutines-android" }
+kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinx-coroutines-core" }
+gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
+rxjava = { group = "io.reactivex.rxjava2", name = "rxjava", version.ref = "rxjava" }
+lifecycle-extensions = { group = "android.arch.lifecycle", name = "extensions", version.ref = "lifecycle-extensions" }
+lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycle-livedata-ktx" }
+lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle-viewmodel-ktx" }
+glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
+room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room-runtime" }
+room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room-ktx" }
+glide-compiler = { group = "com.github.bumptech.glide", name = "compiler", version.ref = "glide-compiler" }
+databinding = { group = "androidx.databinding", name = "baseLibrary", version.ref = "databinding" }
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room-compiler" }
+
+
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+wiremock = { group = "com.github.tomakehurst", name = "wiremock-standalone", version.ref = "wiremock" }
+junit-ext-ktx = { group = "androidx.test.ext", name = "junit-ktx", version.ref = "junitExt" }
+kaspresso = { group = "com.kaspersky.android-components", name = "kaspresso", version.ref = "kaspresso" }
+[plugins]
+
+
