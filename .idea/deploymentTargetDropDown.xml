@@ -8,9 +8,6 @@
       <entry key="EditPersonsTests">
         <State />
       </entry>
-      <entry key="NetworkTests">
-        <State />
-      </entry>
       <entry key="SortPersonsTests">
         <State />
       </entry>
@@ -32,6 +29,9 @@
           </runningDeviceTargetSelectedWithDropDown>
           <timeTargetWasSelectedWithDropDown value="2024-05-14T17:02:03.203844Z" />
         </State>
+      </entry>
+      <entry key="editTextsDisplayedInPortraitOrientationTest()">
+        <State />
       </entry>
     </value>
   </component>
