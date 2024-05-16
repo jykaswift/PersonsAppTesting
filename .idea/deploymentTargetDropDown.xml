@@ -8,9 +8,6 @@
       <entry key="EditPersonsTests">
         <State />
       </entry>
-      <entry key="SortPersonsTests">
-        <State />
-      </entry>
       <entry key="ValidationTests">
         <State />
       </entry>
@@ -31,6 +28,9 @@
         </State>
       </entry>
       <entry key="editTextsDisplayedInPortraitOrientationTest()">
+        <State />
+      </entry>
+      <entry key="sortPersonByRatingTest()">
         <State />
       </entry>
     </value>

@@ -67,7 +67,9 @@ class AddPersonsTests: TestCase(
     @DisplayName("Проверка видимости полей добавления пользователя в альбомном режиме")
     fun editTextsDisplayedInLandscapeOrientationTest() = before {
         device.uiDevice.setOrientationLeft()
-    } .after {  } .run {
+    } .after {
+        device.uiDevice.setOrientationNatural()
+    } .run {
         val personsScreen = PersonsScreen()
         val editPersonScreen = EditPersonScreen()
 
