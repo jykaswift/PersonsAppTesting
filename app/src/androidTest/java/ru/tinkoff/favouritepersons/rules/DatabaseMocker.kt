@@ -25,7 +25,7 @@ class DatabaseMocker(private var persons: List<PersonItem> = listOf()) {
         savePersonsToRepository()
     }
 
-    fun savePersonsToRepository() {
+    private fun savePersonsToRepository() {
         runBlocking {
             persons.forEach {
                 repository?.addPersonItem(it)
@@ -35,7 +35,6 @@ class DatabaseMocker(private var persons: List<PersonItem> = listOf()) {
     fun removePersonsFromRepository() {
         runBlocking {
             persons.forEach {
-                println(repository)
                 repository?.deletePersonItem(it)
             }
         }

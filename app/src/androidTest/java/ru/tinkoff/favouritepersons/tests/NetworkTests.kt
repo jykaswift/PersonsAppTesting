@@ -7,24 +7,36 @@ import com.github.tomakehurst.wiremock.client.WireMock.ok
 import com.github.tomakehurst.wiremock.client.WireMock.stubFor
 import com.github.tomakehurst.wiremock.client.WireMock.urlPathMatching
 import com.github.tomakehurst.wiremock.junit.WireMockRule
+import com.kaspersky.components.alluresupport.interceptors.step.AllureMapperStepInterceptor
 import com.kaspersky.kaspresso.kaspresso.Kaspresso
 import com.kaspersky.kaspresso.params.FlakySafetyParams
 import com.kaspersky.kaspresso.testcases.api.testcase.TestCase
+import io.qameta.allure.android.runners.AllureAndroidJUnit4
+import io.qameta.allure.kotlin.Epic
+import io.qameta.allure.kotlin.Feature
+import io.qameta.allure.kotlin.Story
+import io.qameta.allure.kotlin.junit4.DisplayName
 import org.junit.Rule
 import org.junit.Test
 import org.junit.rules.RuleChain
+import org.junit.runner.RunWith
 import ru.tinkoff.favouritepersons.presentation.activities.MainActivity
 import ru.tinkoff.favouritepersons.rules.MockServerPreferencesRule
 import ru.tinkoff.favouritepersons.screens.PersonsScreen
 import ru.tinkoff.favouritepersons.utils.NetworkMockData
 import ru.tinkoff.favouritepersons.wiremock.WireMockHelper.imageToByteArray
 
+@Epic("Приложение студентов")
+@Feature("Сетевые функции")
+@RunWith(AllureAndroidJUnit4::class)
 class NetworkTests: TestCase(
     kaspressoBuilder = Kaspresso.Builder.simple(
         customize = {
             flakySafetyParams = FlakySafetyParams.custom(timeoutMs = 3_000, intervalMs = 250)
         }
-    )
+    ).apply {
+        stepWatcherInterceptors.addAll(listOf(AllureMapperStepInterceptor()))
+    }
 )  {
 
     private val activityScenarioRule = activityScenarioRule<MainActivity>()
@@ -41,6 +53,8 @@ class NetworkTests: TestCase(
     // По идее этот тест лучше не мокать, но я нигде больше не использую мок
     // поэтому, чтобы показать что мок работает, замокал тут ответ)
     @Test
+    @Story("Получение студента из сети")
+    @DisplayName("Проверка получения студента из сети")
     fun getPersonFromNetwork() {
         stubFor(get(urlPathMatching(".*/api/"))
             .willReturn(ok(NetworkMockData.getJsonMockData()))
@@ -57,7 +71,6 @@ class NetworkTests: TestCase(
         val personsScreen = PersonsScreen()
         personsScreen.clickAddButton()
         personsScreen.clickAddPersonFromNetworkButton()
-        Thread.sleep(5000)
         personsScreen.checkNumberOfPersons(1)
     }
 }

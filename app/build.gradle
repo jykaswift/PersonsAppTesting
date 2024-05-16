@@ -63,6 +63,7 @@ dependencies {
     androidTestImplementation("com.google.testparameterinjector:test-parameter-injector:1.16")
     testImplementation(libs.junit)
     androidTestImplementation(libs.junit)
+    androidTestImplementation(libs.kaspresso.allure)
     androidTestImplementation(libs.junit.ext.ktx)
     androidTestImplementation(libs.kaspresso)
     androidTestImplementation(libs.wiremock)

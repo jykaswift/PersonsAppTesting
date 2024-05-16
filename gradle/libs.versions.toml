@@ -54,6 +54,7 @@ junit = { group = "junit", name = "junit", version.ref = "junit" }
 wiremock = { group = "com.github.tomakehurst", name = "wiremock-standalone", version.ref = "wiremock" }
 junit-ext-ktx = { group = "androidx.test.ext", name = "junit-ktx", version.ref = "junitExt" }
 kaspresso = { group = "com.kaspersky.android-components", name = "kaspresso", version.ref = "kaspresso" }
+kaspresso-allure = { group = "com.kaspersky.android-components", name = "kaspresso-allure-support", version.ref = "kaspresso" }
 androidx-espresso-contrib = { group = "androidx.test.espresso", name = "espresso-contrib", version.ref = "espressoContrib" }
 [plugins]
 

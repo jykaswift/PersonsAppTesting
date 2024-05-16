@@ -3,6 +3,7 @@ package ru.tinkoff.favouritepersons.screens
 import com.kaspersky.kaspresso.screens.KScreen
 import io.github.kakaocup.kakao.edit.KTextInputLayout
 import io.github.kakaocup.kakao.text.KButton
+import io.qameta.allure.kotlin.Allure.step
 import ru.tinkoff.favouritepersons.R
 import ru.tinkoff.favouritepersons.presentation.PersonErrorMessages
 
@@ -21,57 +22,144 @@ class EditPersonScreen: KScreen<PersonsScreen>() {
     private val ratingTextInputLayout = KTextInputLayout { withId(R.id.til_score) }
     private val saveButton = KButton { withId(R.id.submit_button) }
 
-    fun checkNameEditTextDisplayed() = nameTextInputLayout.edit.isDisplayed()
-    fun checkSurnameEditTextDisplayed() = surnameTextInputLayout.edit.isDisplayed()
-    fun checkGenderEditTextDisplayed() = genderTextInputLayout.edit.isDisplayed()
-    fun checkBirthDateEditTextDisplayed() = birthDateTextInputLayout.edit.isDisplayed()
-    fun checkEmailEditTextDisplayed() = emailTextInputLayout.edit.isDisplayed()
-    fun checkPhoneNumberEditTextDisplayed() = phoneTextInputLayout.edit.isDisplayed()
-    fun checkAddressEditTextDisplayed() = addressTextInputLayout.edit.isDisplayed()
-    fun checkPhotoEditTextDisplayed() = photoTextInputLayout.edit.isDisplayed()
-    fun checkRatingEditTextDisplayed() = ratingTextInputLayout.edit.isDisplayed()
-    fun clickSaveButton() = saveButton.click()
-    fun enterName(name: String) = nameTextInputLayout.edit.replaceText(name)
-    fun enterSurname(surname: String) = surnameTextInputLayout.edit.replaceText(surname)
-    fun enterGender(gender: String) = genderTextInputLayout.edit.replaceText(gender)
-    fun enterDOB(dob: String) = birthDateTextInputLayout.edit.replaceText(dob)
-    fun enterEmail(email: String) = emailTextInputLayout.edit.replaceText(email)
-    fun enterPhoneNumber(phoneNumber: String) = phoneTextInputLayout.edit.replaceText(phoneNumber)
-    fun enterAddress(address: String) = addressTextInputLayout.edit.replaceText(address)
-    fun enterPhotoURL(photoURL: String) = photoTextInputLayout.edit.replaceText(photoURL)
-    fun enterRating(rating: String) = ratingTextInputLayout.edit.replaceText(rating.toString())
+    fun checkNameEditTextDisplayed() {
+        step("Проверяем, что текстовое поле имени отображается на экране") {
+            nameTextInputLayout.edit.isDisplayed()
+        }
+    }
+    fun checkSurnameEditTextDisplayed()  {
+        step("Проверяем, что текстовое поле фамилии отображается на экране") {
+            surnameTextInputLayout.edit.isDisplayed()
+        }
+
+    }
+    fun checkGenderEditTextDisplayed()  {
+        step("Проверяем, что текстовое поле пола отображается на экране") {
+            genderTextInputLayout.edit.isDisplayed()
+        }
+    }
+    fun checkBirthDateEditTextDisplayed() {
+        step("Проверяем, что текстовое поле даты рождения отображается на экране") {
+            birthDateTextInputLayout.edit.isDisplayed()
+        }
+    }
+    fun checkEmailEditTextDisplayed() {
+        step("Проверяем, что текстовое поле email отображается на экране") {
+            emailTextInputLayout.edit.isDisplayed()
+        }
+    }
+    fun checkPhoneNumberEditTextDisplayed() {
+        step("Проверяем, что текстовое поле номера телефона отображается на экране") {
+            phoneTextInputLayout.edit.isDisplayed()
+        }
+    }
+    fun checkAddressEditTextDisplayed() {
+        step("Проверяем, что текстовое поле адреса отображается на экране") {
+            addressTextInputLayout.edit.isDisplayed()
+        }
+    }
+    fun checkPhotoEditTextDisplayed() {
+        step("Проверяем, что текстовое поле фото url отображается на экране") {
+            photoTextInputLayout.edit.isDisplayed()
+        }
+    }
+    fun checkRatingEditTextDisplayed() {
+        step("Проверяем, что текстовое поле рейтинга отображается на экране") {
+            ratingTextInputLayout.edit.isDisplayed()
+        }
+    }
+    fun clickSaveButton() {
+        step("Нажимаем кнопку сохранить") {
+            saveButton.click()
+        }
+    }
+    fun enterName(name: String) {
+        step("Вводим имя: $name") {
+            nameTextInputLayout.edit.replaceText(name)
+        }
+    }
+    fun enterSurname(surname: String) {
+        step("Вводим фамилию: $surname") {
+            surnameTextInputLayout.edit.replaceText(surname)
+        }
+    }
+    fun enterGender(gender: String) {
+        step("Вводим пол: $gender") {
+            genderTextInputLayout.edit.replaceText(gender)
+        }
+    }
+    fun enterDOB(dob: String) {
+        step("Вводим дату рождения: $dob") {
+            birthDateTextInputLayout.edit.replaceText(dob)
+        }
+    }
+    fun enterEmail(email: String) {
+        step("Вводим email: $email") {
+            emailTextInputLayout.edit.replaceText(email)
+        }
+    }
+    fun enterPhoneNumber(phoneNumber: String) {
+        step("Вводим телефон: $phoneNumber") {
+            phoneTextInputLayout.edit.replaceText(phoneNumber)
+        }
+    }
+    fun enterAddress(address: String) {
+        step("Вводим адрес: $address") {
+            addressTextInputLayout.edit.replaceText(address)
+        }
+    }
+    fun enterPhotoURL(photoURL: String) {
+        step("Вводим url фото: $photoURL") {
+            photoTextInputLayout.edit.replaceText(photoURL)
+        }
+    }
+    fun enterRating(rating: String) {
+        step("Вводим рейтинг: $rating") {
+            ratingTextInputLayout.edit.replaceText(rating)
+        }
+    }
     fun checkNameEditTextFocusedOnClick() {
-        nameTextInputLayout.edit {
-            click()
-            isFocused()
+        step("Проверяем, что текстовое поле имени фокусируется при нажатии") {
+            nameTextInputLayout.edit {
+                click()
+                isFocused()
+            }
         }
     }
 
     fun checkSurnameEditTextFocusedOnClick() {
-        surnameTextInputLayout.edit {
-            click()
-            isFocused()
+        step("Проверяем, что текстовое поле фамилии фокусируется при нажатии") {
+            surnameTextInputLayout.edit {
+                click()
+                isFocused()
+            }
         }
     }
 
     fun checkGenderEditTextFocusedOnClick() {
-        genderTextInputLayout.edit {
-            click()
-            isFocused()
+        step("Проверяем, что текстовое поле пола фокусируется при нажатии") {
+            genderTextInputLayout.edit {
+                click()
+                isFocused()
+            }
         }
     }
 
     fun checkDOBEditTextFocusedOnClick() {
-        birthDateTextInputLayout.edit {
-            click()
-            isFocused()
+        step("Проверяем, что текстовое поле даты рождения фокусируется при нажатии") {
+            birthDateTextInputLayout.edit {
+                click()
+                isFocused()
+            }
         }
     }
 
     fun checkRatingEditTextFocusedOnClick() {
-        ratingTextInputLayout.edit {
-            click()
-            isFocused()
+        step("Проверяем, что текстовое поле рейтинга фокусируется при нажатии") {
+            ratingTextInputLayout.edit {
+                click()
+                isFocused()
+            }
         }
     }
 
@@ -80,23 +168,40 @@ class EditPersonScreen: KScreen<PersonsScreen>() {
     // В тесткейсах описано изменение цвета, но ошибка предполагает изменение цвета
     // и делать кастомный матчер на эту проверку звучит не очень)
     fun checkNameErrorDisplayed() {
-        nameTextInputLayout.hasError(PersonErrorMessages.NAME.errorMessage)
+        val error = PersonErrorMessages.NAME.errorMessage
+        step("Проверяем, что высветилась ошибка валидации имени: $error") {
+            nameTextInputLayout.hasError(error)
+        }
+
     }
 
     fun checkSurnameErrorDisplayed() {
-        surnameTextInputLayout.hasError(PersonErrorMessages.SURNAME.errorMessage)
+        val error = PersonErrorMessages.SURNAME.errorMessage
+        step("Проверяем, что высветилась ошибка валидации фамилии: $error") {
+            surnameTextInputLayout.hasError(error)
+        }
+
     }
 
     fun checkGenderErrorDisplayed() {
-        genderTextInputLayout.hasError(PersonErrorMessages.GENDER.errorMessage)
+        val error = PersonErrorMessages.GENDER.errorMessage
+        step("Проверяем, что высветилась ошибка валидации пола: $error") {
+            genderTextInputLayout.hasError(error)
+        }
     }
 
     fun checkDOBErrorDisplayed() {
-        birthDateTextInputLayout.hasError(PersonErrorMessages.BIRTHDATE.errorMessage)
+        val error = PersonErrorMessages.BIRTHDATE.errorMessage
+        step("Проверяем, что высветилась ошибка валидации даты рождения: $error") {
+            birthDateTextInputLayout.hasError(error)
+        }
     }
 
     fun checkRatingErrorDisplayed() {
-        ratingTextInputLayout.hasError(PersonErrorMessages.RATING.errorMessage)
+        val error = PersonErrorMessages.RATING.errorMessage
+        step("Проверяем, что высветилась ошибка валидации рейтинга: $error") {
+            ratingTextInputLayout.hasError(error)
+        }
     }
 
 

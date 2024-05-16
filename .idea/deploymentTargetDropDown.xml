@@ -2,13 +2,16 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
+      <entry key="AddPersonsTests">
+        <State />
+      </entry>
+      <entry key="EditPersonsTests">
+        <State />
+      </entry>
       <entry key="NetworkTests">
         <State />
       </entry>
       <entry key="SortPersonsTests">
-        <State />
-      </entry>
-      <entry key="ValidationParametrizedTests">
         <State />
       </entry>
       <entry key="ValidationTests">
@@ -29,9 +32,6 @@
           </runningDeviceTargetSelectedWithDropDown>
           <timeTargetWasSelectedWithDropDown value="2024-05-14T17:02:03.203844Z" />
         </State>
-      </entry>
-      <entry key="getPersonFromNetwork()">
-        <State />
       </entry>
     </value>
   </component>

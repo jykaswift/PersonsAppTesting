@@ -1,12 +1,14 @@
 package ru.tinkoff.favouritepersons.tests
 
 import androidx.test.ext.junit.rules.activityScenarioRule
-import com.google.testing.junit.testparameterinjector.TestParameter
-import com.google.testing.junit.testparameterinjector.TestParameterInjector
-import com.google.testing.junit.testparameterinjector.TestParameters
 import com.kaspersky.kaspresso.kaspresso.Kaspresso
 import com.kaspersky.kaspresso.params.FlakySafetyParams
 import com.kaspersky.kaspresso.testcases.api.testcase.TestCase
+import io.qameta.allure.android.runners.AllureAndroidJUnit4
+import io.qameta.allure.kotlin.Epic
+import io.qameta.allure.kotlin.Feature
+import io.qameta.allure.kotlin.Story
+import io.qameta.allure.kotlin.junit4.DisplayName
 import org.junit.Rule
 import org.junit.Test
 import org.junit.rules.RuleChain
@@ -17,7 +19,9 @@ import ru.tinkoff.favouritepersons.screens.EditPersonScreen
 import ru.tinkoff.favouritepersons.screens.PersonsScreen
 import ru.tinkoff.favouritepersons.utils.DatabaseMockData
 
-
+@Epic("Приложение студентов")
+@Feature("Валидация текстовых полей")
+@RunWith(AllureAndroidJUnit4::class)
 class ValidationTests: TestCase(
     kaspressoBuilder = Kaspresso.Builder.simple(
         customize = {
@@ -38,6 +42,8 @@ class ValidationTests: TestCase(
 
     // Тесткейс №8
     @Test
+    @Story("Валидация имени")
+    @DisplayName("Проверка валидации имени")
     fun nameValidationTest() {
         val personsScreen = PersonsScreen()
         val editPersonScreen = EditPersonScreen()
@@ -50,6 +56,8 @@ class ValidationTests: TestCase(
 
     // Тесткейс №9
     @Test
+    @Story("Валидация фамилии")
+    @DisplayName("Проверка валидации фамилии")
     fun surnameValidationTest() {
         val personsScreen = PersonsScreen()
         val editPersonScreen = EditPersonScreen()

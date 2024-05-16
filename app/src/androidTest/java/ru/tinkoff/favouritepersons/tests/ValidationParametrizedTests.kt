@@ -3,6 +3,7 @@ package ru.tinkoff.favouritepersons.tests
 import androidx.test.ext.junit.rules.activityScenarioRule
 import com.google.testing.junit.testparameterinjector.TestParameter
 import com.google.testing.junit.testparameterinjector.TestParameterInjector
+import com.kaspersky.components.alluresupport.interceptors.step.AllureMapperStepInterceptor
 import com.kaspersky.kaspresso.kaspresso.Kaspresso
 import com.kaspersky.kaspresso.params.FlakySafetyParams
 import com.kaspersky.kaspresso.testcases.api.testcase.TestCase
@@ -32,7 +33,9 @@ class ValidationParametrizedTests: TestCase(
         customize = {
             flakySafetyParams = FlakySafetyParams.custom(timeoutMs = 3_000, intervalMs = 250)
         }
-    )
+    ).apply {
+        stepWatcherInterceptors.addAll(listOf(AllureMapperStepInterceptor()))
+    }
 ) {
 
     private val databaseMockData = DatabaseMockData()

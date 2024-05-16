@@ -13,6 +13,7 @@ import io.github.kakaocup.kakao.recycler.KRecyclerItem
 import io.github.kakaocup.kakao.recycler.KRecyclerView
 import io.github.kakaocup.kakao.text.KButton
 import io.github.kakaocup.kakao.text.KTextView
+import io.qameta.allure.kotlin.Allure.step
 import org.hamcrest.Matcher
 import ru.tinkoff.favouritepersons.R
 import ru.tinkoff.favouritepersons.customMatcher.PersonsSortMatcher
@@ -36,66 +37,93 @@ class PersonsScreen: KScreen<PersonsScreen>() {
     val sortMenu = SortMenu { withId(R.id.action_item_sort) }
 
     fun clickAddButton() {
-        addPersonButton.click()
+        step("Нажимаем кнопку добавить студента") {
+            addPersonButton.click()
+        }
     }
     fun clickAddPersonFromNetworkButton() {
-        addPersonNetworkButton.click()
+        step("Нажимаем кнопку получить студента из сети") {
+            addPersonNetworkButton.click()
+        }
     }
 
     fun clickAddPersonManuallyButton() {
-        addPersonManuallyButton.click()
+        step("Нажимаем кнопку создать студента") {
+            addPersonManuallyButton.click()
+        }
     }
 
     fun checkPersonNameContains(string: String, atPosition: Int) {
-        personsList.childAt<PersonItem>(atPosition) {
-            name.containsText(string)
+        step("Проверяем имя $atPosition студента в списке") {
+            personsList.childAt<PersonItem>(atPosition) {
+                name.containsText(string)
+            }
         }
     }
 
     fun checkPersonAgeBy(dateOfBirth: DOB, atPosition: Int) {
         val currentYear = java.time.Year.now().value
         val age = currentYear - dateOfBirth.year
-        personsList.childAt<PersonItem>(atPosition) {
-            privateInfo.containsText(age.toString())
+        step("Проверяем возраст $atPosition студента в списке") {
+            personsList.childAt<PersonItem>(atPosition) {
+                privateInfo.containsText(age.toString())
+            }
         }
     }
 
     fun checkPersonGenderWith(gender: Gender, atPosition: Int) {
-        personsList.childAt<PersonItem>(atPosition) {
-            privateInfo.containsText(gender.toString())
+        step("Проверяем пол $atPosition студента в списке") {
+            personsList.childAt<PersonItem>(atPosition) {
+                privateInfo.containsText(gender.toString())
+            }
         }
     }
 
     fun checkPersonRatingWith(rating: Int, atPosition: Int) {
-        personsList.childAt<PersonItem>(atPosition) {
-            this.rating.containsText(rating.toString())
+        step("Проверяем рейтинг $atPosition студента в списке") {
+            personsList.childAt<PersonItem>(atPosition) {
+                this.rating.containsText(rating.toString())
+            }
         }
     }
 
     fun deletePersonAt(position: Int) {
-        personsList.swipeLeft(position)
+        step("Удаляем $position студента в списке") {
+            personsList.swipeLeft(position)
+        }
     }
 
     fun checkNumberOfPersons(count: Int) {
-        personsList.hasSize(count)
+        step("Проверяем количество студентов в списке") {
+            personsList.hasSize(count)
+        }
     }
 
     fun clickPersonAt(position: Int) {
-        personsList.childAt<PersonItem>(position) {
-            click()
+        step("Нажимаем на первого студента в списке") {
+            personsList.childAt<PersonItem>(position) {
+                click()
+            }
         }
     }
 
     fun checkPersonsSortedByRating() {
-        personsList.assert { matches(PersonsSortMatcher(PersonFields.BY_RATING)) }
+        step("Проверяем что студенты отсортированы по рейтингу") {
+            personsList.assert { matches(PersonsSortMatcher(PersonFields.BY_RATING)) }
+        }
+
     }
 
     fun checkPersonsSortedByAge() {
-        personsList.assert { matches(PersonsSortMatcher(PersonFields.BY_AGE)) }
+        step("Проверяем что студенты отсортированы по возрасту") {
+            personsList.assert { matches(PersonsSortMatcher(PersonFields.BY_AGE)) }
+        }
     }
 
     fun checkPersonsSortedByName() {
-        personsList.assert { matches(PersonsSortMatcher(PersonFields.BY_SURNAME)) }
+        step("Проверяем что студенты отсортированы по имени") {
+            personsList.assert { matches(PersonsSortMatcher(PersonFields.BY_SURNAME)) }
+        }
     }
 }
 
