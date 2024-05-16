@@ -2,13 +2,19 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
+      <entry key="NetworkTests">
+        <State />
+      </entry>
+      <entry key="SortPersonsTests">
+        <State />
+      </entry>
+      <entry key="ValidationParametrizedTests">
+        <State />
+      </entry>
+      <entry key="ValidationTests">
+        <State />
+      </entry>
       <entry key="app">
-        <State />
-      </entry>
-      <entry key="useAppContext()">
-        <State />
-      </entry>
-      <entry key="useAppContext() (1)">
         <State>
           <runningDeviceTargetSelectedWithDropDown>
             <Target>
@@ -16,13 +22,16 @@
               <deviceKey>
                 <Key>
                   <type value="VIRTUAL_DEVICE_PATH" />
-                  <value value="$USER_HOME$/.android/avd/Pixel_6_Pro_Test.avd" />
+                  <value value="$USER_HOME$/.android/avd/Pixel_6_Pro_API_28.avd" />
                 </Key>
               </deviceKey>
             </Target>
           </runningDeviceTargetSelectedWithDropDown>
-          <timeTargetWasSelectedWithDropDown value="2024-05-14T00:21:48.138829Z" />
+          <timeTargetWasSelectedWithDropDown value="2024-05-14T17:02:03.203844Z" />
         </State>
+      </entry>
+      <entry key="getPersonFromNetwork()">
+        <State />
       </entry>
     </value>
   </component>

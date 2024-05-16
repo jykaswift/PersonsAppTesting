@@ -54,6 +54,13 @@ enum class Gender {
             FEMALE -> "Female"
         }
     }
+
+    fun inputString(): String {
+        return when(this) {
+            MALE -> "М"
+            FEMALE -> "Ж"
+        }
+    }
 }
 
 

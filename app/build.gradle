@@ -60,11 +60,13 @@ dependencies {
 
 
     // TESTING
+    androidTestImplementation("com.google.testparameterinjector:test-parameter-injector:1.16")
     testImplementation(libs.junit)
     androidTestImplementation(libs.junit)
     androidTestImplementation(libs.junit.ext.ktx)
     androidTestImplementation(libs.kaspresso)
     androidTestImplementation(libs.wiremock)
+    androidTestImplementation(libs.androidx.espresso.contrib)
 
 
 }

@@ -100,6 +100,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     fun setSortMethod(method : PersonFields) {
         currentSortMethod.value = method
+        listOf<String>().sortedDescending()
     }
 
     private fun List<PersonItem>.sortByDescending(sortingMethod: PersonFields): List<PersonItem> {

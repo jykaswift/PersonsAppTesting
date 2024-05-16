@@ -20,10 +20,12 @@ glide-compiler = "4.12.0"
 databinding = "3.2.0-alpha11"
 room-compiler = "2.5.1"
 
+
 junit = "4.13.2"
 junitExt = "1.1.5"
 kaspresso = "1.5.3"
 wiremock = "2.27.2"
+espressoContrib = "3.5.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -48,11 +50,11 @@ glide-compiler = { group = "com.github.bumptech.glide", name = "compiler", versi
 databinding = { group = "androidx.databinding", name = "baseLibrary", version.ref = "databinding" }
 room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room-compiler" }
 
-
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 wiremock = { group = "com.github.tomakehurst", name = "wiremock-standalone", version.ref = "wiremock" }
 junit-ext-ktx = { group = "androidx.test.ext", name = "junit-ktx", version.ref = "junitExt" }
 kaspresso = { group = "com.kaspersky.android-components", name = "kaspresso", version.ref = "kaspresso" }
+androidx-espresso-contrib = { group = "androidx.test.espresso", name = "espresso-contrib", version.ref = "espressoContrib" }
 [plugins]
 
 
